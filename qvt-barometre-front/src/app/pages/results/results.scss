@@ -1,0 +1,21 @@
+canvas {
+  display: block;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+}
+
+.loader {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #c7d0ff;
+  border-radius: 50%;
+  border-top: 4px solid #2450f7;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}

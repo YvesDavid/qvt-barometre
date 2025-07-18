@@ -1,0 +1,31 @@
+<div class="results-container">
+
+  <h2>Résultats</h2>
+
+  <!-- [NOTE perso] Spinner pendant le chargement des données -->
+  <div *ngIf="loadingAPI" class="spinner-container">
+    <p>Chargement des résultats en cours...</p>
+    <div class="spinner"></div>
+  </div>
+
+  <h2>Bar Chart</h2>
+  <!-- [NOTE perso] Graphique de test (barres) - statique -->
+  <div class="chart-container">
+    <canvas baseChart
+      [data]="barChartDataFictif"
+      [type]="barChartType"
+      [options]="chartOptions">
+    </canvas>
+  </div>
+
+  <h2>Pie Chart</h2>
+  <!-- [NOTE perso] Graphique dynamique mis à jour avec les données de l'API -->
+  <div class="chart-container" *ngIf="!loadingAPI">
+    <canvas baseChart
+      #pieChartRef
+      [data]="pieChartDataAPI"
+      [type]="pieChartType"
+      [options]="chartOptions">
+    </canvas>
+  </div>
+</div>
